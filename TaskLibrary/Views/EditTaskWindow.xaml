@@ -1,0 +1,28 @@
+﻿<Window x:Class="TaskLibrary.EditTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskLibrary"
+        mc:Ignorable="d"
+        Title="Редактирование задачи" Height="120" Width="700">
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+    <Grid Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Введите новое название задачи:" Foreground="Red" FontWeight="Bold" />
+        <TextBox Text="{Binding Title}" x:Name="InputText" Grid.Column="1" FontSize="12"  SpellCheck.IsEnabled="True" Language="ru-ru" TextWrapping="Wrap" Foreground="Black" Background="Transparent" BorderBrush="IndianRed" MouseDoubleClick="Accept_Click" />
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+            <Button Style="{DynamicResource ButtonStyle}" IsDefault = "True" Click="Accept_Click" MinWidth="5" Margin="6" RenderTransformOrigin="-0.72,0.346">OK</Button>
+            <Button Style="{DynamicResource ButtonStyle}" IsCancel  = "True" MinWidth="10" Margin="5">Отмена</Button>
+        </StackPanel>
+    </Grid>
+</Window>
